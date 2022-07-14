@@ -1,0 +1,56 @@
+header {
+  background: #161616;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  .logo-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    .logo-image {
+      height: 100%;
+    }
+    .title {
+      color: #d8d8d8;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .menu {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    .menu-list {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      color: #d8d8d8;
+      font-size: 1rem;
+      font-weight: 600;
+      list-style-type: none;
+    }
+  }
+
+  .profile {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+
+    .profile-name {
+      color: #d8d8d8;
+      margin: 0 0 0 10px;
+      font-size: 1.5rem;
+    }
+
+    .profile-avatar {
+      height: 60%;
+    }
+  }
+}
