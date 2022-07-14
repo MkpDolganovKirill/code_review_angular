@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 
 import { ProfileComponent } from './profile.component';
-import { MainRoutingModule } from "./main-routing.module";
-import { MainComponent } from "../../main.component";
+import { ProfileRoutingModule } from "./profile-routing.module";
+import { CreateRepositoryComponent } from './components/create-repository/create-repository.component';
 
 @NgModule({
   declarations: [
     ProfileComponent,
-    MainComponent
+    CreateRepositoryComponent
   ],
-  imports: [MainRoutingModule],
+  imports: [ProfileRoutingModule],
   providers: [],
 })
 export class ProfileModule { }

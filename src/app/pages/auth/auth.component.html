@@ -1,1 +1,13 @@
-<p>auth works!</p>
+<div class="container">
+  <div class="inner-layout">
+    <h1 class="title">You haven't account yet</h1>
+    <div class="input-form">
+      <mat-form-field class="input-form-field" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input type="email" matInput [(ngModel)]="usernameField"
+               placeholder="username">
+        <mat-hint>You haven't registered yet, enter a username</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
