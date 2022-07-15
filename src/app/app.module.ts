@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthComponent } from "./pages/auth/auth.component";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
 import { MainComponent } from './pages/main/main.component';
 import { HttpHelperService } from "./services/http-helper.service";
 import { HeaderComponent } from './shared/header/header.component';
+import { CommonModule } from "@angular/common";
+import { MaterialModule } from "./shared/material/material.module";
+import { ReviewComponent } from './pages/main/pages/review/review.component';
+import { UsersPageComponent } from './pages/main/pages/users-page/users-page.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +21,16 @@ import { HeaderComponent } from './shared/header/header.component';
     MainComponent,
     AuthComponent,
     HeaderComponent,
+    UsersPageComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule
+    CommonModule,
+    FormsModule,
+    MaterialModule,
   ],
   providers: [HttpHelperService],
   bootstrap: [AppComponent]

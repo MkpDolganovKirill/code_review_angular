@@ -34,6 +34,15 @@ header {
       font-size: 1rem;
       font-weight: 600;
       list-style-type: none;
+
+      li {
+        transition: .3s;
+      }
+
+      li:hover {
+        cursor: pointer;
+        color: blueviolet;
+      }
     }
   }
 

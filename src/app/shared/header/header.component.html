@@ -6,13 +6,13 @@
   <div class="menu">
     <ul class="menu-list">
       <li>NEWS</li>
-      <li>USERS</li>
+      <li (click)="goToUsersPage()">USERS</li>
       <li>REPOSITORIES</li>
       <li>COMMENTS</li>
     </ul>
   </div>
-  <div class="profile">
+  <div class="profile" (click)="goToCurrentUser()">
     <img src="assets/icons/profile-image.svg" alt="profile_image" class="profile-avatar">
-    <p class="profile-name">Kirill</p>
+    <p class="profile-name">{{username}}</p>
   </div>
 </header>

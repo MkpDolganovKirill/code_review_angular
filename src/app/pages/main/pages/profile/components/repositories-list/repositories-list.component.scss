@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  padding: 20px;
+
+  .repositories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .repo {
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: .3s;
+
+    .folder-icon {
+      height: 25px;
+    }
+  }
+
+  .repo:hover {
+    cursor: pointer;
+    background: rgba(149, 52, 241, 0.3);
+  }
+}

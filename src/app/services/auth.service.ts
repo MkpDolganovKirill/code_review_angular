@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHelperService } from "./http-helper.service";
 import { catchError, finalize, of } from 'rxjs';
-import { ErrorService } from './error.service';
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -20,9 +19,11 @@ export class AuthService {
         })
       ).subscribe((result: any) => {
         if (result?.user) {
+          console.log(result.user);
           localStorage.setItem('username', result.user.username);
           localStorage.setItem('ip', result.user.ip);
-          this.router.navigate(['/main']);
+          localStorage.setItem('userId', result.user._id);
+          this.router.navigate([`/main/profile/${result.user._id}`]);
         }
     })
   }
@@ -38,6 +39,7 @@ export class AuthService {
       if (result) {
         localStorage.setItem('username', result.user.username);
         localStorage.setItem('ip', result.user.ip);
+        localStorage.setItem('userId', result.user._id);
         this.router.navigate(['/main']);
       }
     })

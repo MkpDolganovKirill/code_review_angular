@@ -1,0 +1,27 @@
+@import 'src/styles-variables.scss';
+
+.container {
+  width: 100%;
+}
+
+.create-form {
+  padding: 15px 0 0 0;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: $box-shadow-primary;
+}
+
+.creating-button {
+  margin-bottom: 25px;
+  button {
+    height: 50px;
+    margin: 0 10px 0 10px;
+  }
+}
+.name, .diffType, .commit, .path {
+  flex: 1;
+  margin-left: 10px;
+}
+

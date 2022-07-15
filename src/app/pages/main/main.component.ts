@@ -3,10 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import * as Diff2Html from "diff2html";
 import { Router } from "@angular/router";
 import { environment } from "../../../environments/environment";
+import { UsersDataService } from "../../services/users-data.service";
+import { HttpHelperService } from "../../services/http-helper.service";
 
-interface test {
-  diff: string
-}
+
 
 @Component({
   selector: 'app-main',
@@ -18,21 +18,21 @@ export class MainComponent implements OnInit {
   outputHtml: string | undefined;
   constructor(
     private http: HttpClient,
+    private httpHelper: HttpHelperService,
     private router: Router,
+    private usersService: UsersDataService,
   ) {
     this.init();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.httpHelper.getAllUsers().subscribe(res => {
+      this.usersService.userList.next(res.users);
+      console.log(this.usersService.userList);
+    })
+  }
 
   init() {
-    this.http.post<test>(`http://192.168.88.47:9999/ssh/repository/diff/get`, {
-      "username": "Kirill",
-      "projectName": "MyProject",
-      "ip": "192.168.88.27",
-      "repositoryPath": "/home/user/testFolderGit"
-    }).subscribe(res => {
-      this.outputHtml = Diff2Html.html(res.diff, { drawFileList: true, matching: 'lines', outputFormat: 'side-by-side' });
-    })
+
   }
 }

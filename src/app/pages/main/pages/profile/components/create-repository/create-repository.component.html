@@ -1,1 +1,32 @@
-<p>create-repository works!</p>
+<div *ngIf="isRepositoryBelongsCurrentUser" class="container">
+  <form [formGroup]="creatingRepositoryForm" class="create-form">
+    <mat-form-field class="outlined-input name" appearance="outline">
+      <mat-label>Repository name</mat-label>
+      <input matInput formControlName="projectName" placeholder="myProject">
+    </mat-form-field>
+    <mat-form-field class="outlined-input path" appearance="outline">
+      <mat-label>Local path</mat-label>
+      <input matInput formControlName="repositoryPath" placeholder="work/myProject (without home/user)">
+    </mat-form-field>
+    <mat-form-field class="outlined-input diffType" appearance="outline">
+      <mat-label>Settings</mat-label>
+      <mat-select formControlName="diffType"  >
+        <mat-option value="" >NONE</mat-option>
+        <mat-option value="1" >no commit changes</mat-option>
+        <mat-option value="2" >last commit</mat-option>
+        <mat-option value="3" >with commit id</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="isCommitId" class="outlined-input commit" appearance="outline">
+      <mat-label>Commit ID</mat-label>
+      <input matInput formControlName="commitId" placeholder="bf0a645f2d609053c6a504095c89865404d4e61e">
+    </mat-form-field>
+    <div class="creating-button">
+      <button  [disabled]="creatingRepositoryForm?.invalid" (click)="createNewRepository()" mat-raised-button>
+        Добавить
+      </button>
+    </div>
+  </form>
+</div>
+
+
