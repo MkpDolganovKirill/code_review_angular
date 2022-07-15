@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngIf="user" class="repositories-list">
+    <div class="repo" *ngFor="let rep of user.projects" (click)="goToUserRepository(user, rep)">
+      <img src="assets/icons/folder_icon.png" alt="folder" class="folder-icon">
+      <span class="folder-name">{{rep.projectName}}</span>
+    </div>
+  </div>
+</div>
